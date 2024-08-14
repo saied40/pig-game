@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --body-bg: linear-gradient(to left top, #753682 0%, #bf2e34 100%);
+  --body-text: #333;
+  --winner-bg: #2f2f2f;
+  --winner-text: #c7365f;
+  --current-box-bg: #c7365f;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  background: var(--body-bg);
+  color: var(--body-text);
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  background-color: #fff6;
+  backdrop-filter: blur(12.5rem);
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 2rem #0005;
+}
+
+section {
+  --padding: 3rem;
+  --gap-between: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--padding);
+  gap: 2rem;
+  transition: all .4s ease-in-out;
+
+  &:nth-child(1) {
+    padding-right: var(--gap-between);
+  }
+
+  &:nth-child(2) {
+    padding-left: var(--gap-between);
+  }
+
+  h2 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    transition: inherit;
+  }
+
+  & > p {
+    font-size: 3.2rem;
+    font-weight: 300;
+    margin: 0 0 2rem 0;
+    color: var(--current-box-bg);
+    transition: inherit;
+  }
+
+  .current {
+    background-color: var(--current-box-bg);
+    padding: 1.5rem 2.2rem;
+    border-radius: .8rem;
+    box-shadow: 0 0 1rem #0003;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+
+    p:nth-child(2) {
+      font-size: 2rem;
+    }
+  }
+}
+
+section.active-player {
+  background-color: #fffd;
+
+  h2 {
+    font-weight: 400;
+  }
+
+  & > p {
+    font-weight: 500;
+  }
+}
+
+section.winner-player {
+  background-color: var(--winner-bg);
+
+  h2 {
+    color: var(--winner-text);
+    font-weight: 500;
+  }
+}
+
+.btns {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.btns button {
+  padding: .8rem 1.2rem;
+  border-radius: .8rem;
+  box-shadow: 0 0 1rem #0005;
+  border: none;
+  background-color: #fffe;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  
+  &[disabled] {
+    cursor: not-allowed;
+  }
+}
+
+button.roll {
+  background: var(--body-bg);
+  color: #fff;
+}
+
+.btns .dice {
+  --size: 6rem;
+  background-color: #fffd;
+  box-shadow: 0 0 1rem #0004;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: .3rem 1rem;
+
+  span {
+    background-color: var(--current-box-bg);
+    width: .7rem;
+    height: .7rem;
+    display: none;
+    border-radius: 50%;
+    margin: .5rem;
+  }
+
+  &.dice-1 {
+    justify-content: center;
+
+    span:nth-child(1) {
+      display: inline-block;
+    }
+  }
+  
+  &.dice-2 {
+    span:nth-child(1), span:nth-child(2) {
+      display: inline-block;
+    }
+  }
+  
+  &.dice-3 {
+    flex-wrap: nowrap;
+
+    span:nth-child(1), span:nth-child(2), span:nth-child(3) {
+      display: inline-block;
+      margin: .3rem;
+    }
+
+    span:nth-child(1) {
+      align-self: flex-end;
+    }
+    
+    span:nth-child(3) {
+      align-self: flex-start;
+    }
+  }
+  
+  &.dice-4 {
+    span:nth-child(1), span:nth-child(2), span:nth-child(3), span:nth-child(4) {
+      display: inline-block;
+    }
+  }
+  
+  &.dice-5 {
+    span:nth-child(1), span:nth-child(2), span:nth-child(3), span:nth-child(4), span:nth-child(5) {
+      display: inline-block;
+    }
+
+    span:nth-child(3) {
+      margin-inline: 1.65rem;
+    }
+  }
+
+  &.dice-6 {
+    span {
+      display: inline-block;
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  html {
+    font-size: 8px;
+  }
+  main {
+    flex-direction: column;
+    overflow: unset;
+    position: unset;
+  }
+  main section {
+    border-radius: 0;
+
+    &:nth-child(1) {
+      padding: var(--padding) var(--padding) var(--gap-between) !important;
+    }
+    
+    &:nth-child(2) {
+      padding: var(--gap-between) var(--padding) var(--padding) !important;
+    }
+  }
+  .btns {
+    position: fixed;
+    inset: 0;
+    top: unset;
+    width: 100vw;
+    height: fit-content;
+    flex-direction: row;
+    background-color: #fff;
+    transform: translate(-26%, 150%);
+    padding-block: 1rem;
+
+    .dice {
+      position: fixed;
+      top: -725%;
+    }
+  }
+}

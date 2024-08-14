@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pig Game</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="active-player">
+        <h2 id="player1-name">Player 1</h2>
+        <p id="player1-score">55</p>
+        <div class="current">
+          <p>Current</p>
+          <p id="player1-current">5</p>
+        </div>
+      </section>
+      <section>
+        <h2 id="player2-name">Player 2</h2>
+        <p id="player2-score">22</p>
+        <div class="current">
+          <p>Current</p>
+          <p id="player2-current">8</p>
+        </div>
+      </section>
+      <div class="btns">
+        <button type="reset" id="new-game">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 512 512">
+            <path fill="#c7365f" d="M415.313 358.7c36.453-36.452 55.906-85.231 54.779-137.353c-1.112-51.375-21.964-99.908-58.715-136.66l-22.627 22.627a166.82 166.82 0 0 1 49.35 114.725c.937 43.313-15.191 83.81-45.463 114.083l-48.617 49.051l.044-89.165l-32-.016L311.992 440h144.071v-32h-89.614ZM47.937 112h89.614l-48.864 49.3c-36.453 36.451-55.906 85.231-54.779 137.352a198.68 198.68 0 0 0 58.715 136.66l22.627-22.627A166.82 166.82 0 0 1 65.9 297.962c-.937-43.314 15.191-83.811 45.463-114.083l48.617-49.051l-.044 89.165l32 .015L192.008 80H47.937Z" />
+        </svg> New Game</button>
+        <div class="dice dice-6" id="dice">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <button type="button" class="roll" id="roll">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 512 512">
+            <path fill="#fff"
+              d="M440.88 129.37L288.16 40.62a64.14 64.14 0 0 0-64.33 0L71.12 129.37a4 4 0 0 0 0 6.9L254 243.85a4 4 0 0 0 4.06 0L440.9 136.27a4 4 0 0 0-.02-6.9M256 152c-13.25 0-24-7.16-24-16s10.75-16 24-16s24 7.16 24 16s-10.75 16-24 16m-18 118.81L54 163.48a4 4 0 0 0-6 3.46v173.92a48 48 0 0 0 23.84 41.39L234 479.48a4 4 0 0 0 6-3.46V274.27a4 4 0 0 0-2-3.46M96 368c-8.84 0-16-10.75-16-24s7.16-24 16-24s16 10.75 16 24s-7.16 24-16 24m96-32c-8.84 0-16-10.75-16-24s7.16-24 16-24s16 10.75 16 24s-7.16 24-16 24m266-172.49L274 271.56a4 4 0 0 0-2 3.45V476a4 4 0 0 0 6 3.46l162.15-97.23A48 48 0 0 0 464 340.86V167a4 4 0 0 0-6-3.49M320 424c-8.84 0-16-10.75-16-24s7.16-24 16-24s16 10.75 16 24s-7.16 24-16 24m0-88c-8.84 0-16-10.75-16-24s7.16-24 16-24s16 10.75 16 24s-7.16 24-16 24m96 32c-8.84 0-16-10.75-16-24s7.16-24 16-24s16 10.75 16 24s-7.16 24-16 24m0-88c-8.84 0-16-10.75-16-24s7.16-24 16-24s16 10.75 16 24s-7.16 24-16 24" />
+          </svg> Roll Dice</button>
+        <button type="button" id="hold">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1.3rem" height="1.3rem" viewBox="0 0 50 50">
+            <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+              <path stroke="#bf2e34" d="M25 6.25v16.667m-6.25-6.25l6.25 6.25l6.25-6.25" />
+              <path stroke="#c7365f"
+                d="M43.75 27.083L37.98 9.75A2.08 2.08 0 0 0 36 8.333h-2.667m-16.666 0H14a2.08 2.08 0 0 0-2.083 1.417L6.25 27.083m37.5 0v14.584a2.083 2.083 0 0 1-2.083 2.083H8.333a2.083 2.083 0 0 1-2.083-2.083V27.083h10.417a8.333 8.333 0 1 0 16.666 0z" />
+            </g>
+        </svg> Hold</button>
+      </div>
+    </main>
+  </body>
+</html>
