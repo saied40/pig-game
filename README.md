@@ -10,4 +10,4 @@ or you get the dice 1 and you lose the points in the 'Current' box
 
 and when the scores become 100 point or more you win.
 
-PLEASE give it a try [here]()
+PLEASE give it a try [here](https://saied40.github.io/pig-game/)
