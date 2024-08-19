@@ -182,7 +182,7 @@ button.roll {
   }
   
   &.dice-2 {
-    span:nth-child(1), span:nth-child(2) {
+    span:nth-child(n+1):nth-child(-n+2) {
       display: inline-block;
     }
   }
@@ -190,7 +190,7 @@ button.roll {
   &.dice-3 {
     flex-wrap: nowrap;
 
-    span:nth-child(1), span:nth-child(2), span:nth-child(3) {
+    span:nth-child(n+1):nth-child(-n+3) {
       display: inline-block;
       margin: .3rem;
     }
@@ -205,13 +205,13 @@ button.roll {
   }
   
   &.dice-4 {
-    span:nth-child(1), span:nth-child(2), span:nth-child(3), span:nth-child(4) {
+    span:nth-child(n+1):nth-child(-n+4) {
       display: inline-block;
     }
   }
   
   &.dice-5 {
-    span:nth-child(1), span:nth-child(2), span:nth-child(3), span:nth-child(4), span:nth-child(5) {
+    span:nth-child(n+1):nth-child(-n+5) {
       display: inline-block;
     }
 

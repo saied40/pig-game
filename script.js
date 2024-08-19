@@ -8,7 +8,7 @@ const newGameBtn = document.getElementById("new-game");
 const dice = document.getElementById("dice");
 const player1NameEle = document.getElementById("player1-name");
 const player2NameEle = document.getElementById("player2-name");
-const nums = [1, 2, 3, 4, 5, 6];
+const nums = [1, 2, 3, 4, 5, 6, 7];
 const losingNums = [1];
 const winningScore = 100;
 let currentDice = 0,
@@ -58,9 +58,7 @@ function resetAll() {
 };
 
 function rollDice() {
-  let diceNum =
-    Math.floor(Math.random() * (Math.max(...nums) - (Math.min(...nums) + 1))) +
-    Math.min(...nums);
+  let diceNum = Math.floor(Math.random() * (Math.max(...nums) - (Math.min(...nums) + 1))) + Math.min(...nums);
 
   if (diceNum == currentDice) {
     rollDice();
@@ -68,6 +66,15 @@ function rollDice() {
   } else {
     currentDice = diceNum;
   }
+
+  if (diceNum == 6) {
+    console.log(`diceNum == 6`);
+  }
+  if (diceNum == 7) {
+    console.log(`diceNum == 7`);
+  }
+
+  console.log(diceNum, typeof diceNum);
 
   dice.style.opacity = "1";
   dice.classList.value = `dice dice-${diceNum}`;
